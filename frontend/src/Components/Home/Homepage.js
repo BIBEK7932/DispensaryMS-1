@@ -8,12 +8,14 @@ import doc2 from './assets/doctor-2.jpg';
 import doc3 from './assets/doctor-3.jpg';
 import header from './assets/header.jpg';
 import choose from './assets/choose-us.jpg';
+import Afterbar from "../Navbar/Afterbar";
+import NavBar from "../Navbar/Navbar";
 
 
 function Homep(){
     return(
     <div>
-    
+   <NavBar/>
     <header>
         
       <div className="section__container header__container">
@@ -40,7 +42,7 @@ function Homep(){
       </div>
     </header>
 
-    <section className="section__container service__container">
+    <section className="section__container service__container" id="service">
       <div className="service__header">
         <div className="service__header__content">
           <h2 className="section__header">Our Special service</h2>
@@ -81,7 +83,7 @@ function Homep(){
         </div>
       </div>
     </section>
-    <section className="section__container about__container">
+    <section className="section__container about__container" id="about">
       <div className="about__content">
         <h2 className="section__header">About Us</h2>
         <p>

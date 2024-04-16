@@ -10,19 +10,23 @@ mongoose.connect(db,{})
 .catch((err)=>{console.log(err)})
 const doctorsScema = require('./model/dctrModel.js')
 
-app.post('/addDoctor',async(req,res)=>{
-    try {
-        console.log(req.body)
-        const data = new doctorsScema(req.body);
-        await data.save()
-        res.send({
-            message:"added"
-        })
-    } catch (error) {
-        console.log("Error" + error)
-    }
+// app.post('/addDoctor',async(req,res)=>{
+//     try {
+//         console.log(req.body)
+//         const data = new doctorsScema(req.body);
+//         await data.save()
+//         res.send({
+//             message:"added"
+//         })
+//     } catch (error) {
+//         console.log("Error" + error)
+//     }
 
-})
+// })
+const userRoute = require("./route/userRoute.js")
+const doctorRoute = require("./route/doctorRoute.js")
+app.use("/user",userRoute)
+app.use("/doctor",doctorRoute)
 
 app.listen(5050,()=>{
     console.log("Server Started");

@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
 const doctors = mongoose.Schema({
     name:{
-        type: String
+        type: String,
+        required:true
     },
-    category:{
-        type: String
+    email:{
+        type:String,
+        required:true
     },
-    image:{
-        type: String
+    password:{
+        type:String,
+        required:true
     },
-    fContact:{
-        type: String
-    },
-    insContact:{
-        type: String
-    }
+   about:{
+    type:String,
+    required:true
+   }
 })
 
 

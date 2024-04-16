@@ -1,7 +1,10 @@
+import NavBar from '../Navbar/Navbar';
 import './Doctors.css'
 
 function Doctors() {
     return (
+        <>
+        <NavBar/>
         <div>
             <div className="doctors__grid1">
                 <div className="doctors__card1">
@@ -90,6 +93,7 @@ function Doctors() {
                 </div>
             </div>
             </div>
+            </>
             )
 }
 

@@ -3,6 +3,7 @@ import Afterbar from '../Navbar/Afterbar'
 import axios from 'axios'
 import Afterdctrnav from '../Navbar/Afterdctrnav'
 import { useLocation } from 'react-router-dom'
+import './doc.css'
 const Afterloginadoctor = () => {
     const location = useLocation();
     const name = location.state && location.state.name
@@ -23,11 +24,11 @@ const [data,setData] = useState([])
   return (
     <>
    <Afterdctrnav name={name}/>
-    <div>
+    <div id='appoinmentList'>
         
     <div style={{}}>
-  <table>
-    <thead>
+  <table id='appoinmentListT'>
+    <thead className='appoinmentListTH'>
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -35,7 +36,7 @@ const [data,setData] = useState([])
         <th>Phone</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody className='appoinmentListTH'>
       {
         data.map((val, ind) => {
           return (
@@ -56,4 +57,4 @@ const [data,setData] = useState([])
   )
 }
 
-export default Afterloginadoctor
+export default Afterloginadoctor;

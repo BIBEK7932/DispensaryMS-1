@@ -15,7 +15,11 @@ const doctors = mongoose.Schema({
    about:{
     type:String,
     required:true
-   }
+   },
+   profilePhoto: {
+    type: String, // Assuming the profile photo is stored as a URL
+    required: false // Assuming the profile photo is optional
+}
 })
 
 

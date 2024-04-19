@@ -5,6 +5,7 @@ import "./Login1.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../Navbar/Navbar";
+import './Login1.css'
 
 function Login() {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ function Login() {
     email: "",
     password: "",
     about: "",
+    profilePhoto: "",
     accountType: "doctor",
   });
   const [post1, setPost1] = useState({
@@ -53,8 +55,8 @@ function Login() {
         position: "top-center",
       });
       setTimeout(() => {
-        // window.location.reload();
-        // // navigate("/")
+        window.location.reload();
+        navigate("/")
       }, 1000);
     } catch (error) {
       toast.error("Signup failed", {
@@ -117,9 +119,11 @@ function Login() {
   }, []);
 
   return (
-    <>
+    <div className="l1">
     <NavBar/>
+   
     <div id="mainlogin">
+   
       <ToastContainer />
       <div className="container" id="container">
         <div className="form-container sign-up-container">
@@ -158,6 +162,12 @@ function Login() {
               placeholder="About you"
               onChange={handleInput}
               name="about"
+            />
+            <input
+              type="file"
+              placeholder="Upload Photo"
+              onChange={handleInput}
+              name="profilePhoto"
             />
             <button type="submit">Sign In</button>
           </form>
@@ -217,7 +227,7 @@ function Login() {
         </div>
       </div>
     </div>
-    </>
+    </div>
   );
 }
 

@@ -2,13 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { IconName } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg"; 
-const Afterdctrnav = ({name}) => {
+const Afterdctrnav = ({name, profilePhoto}) => {
     const navigate = useNavigate()
     const handleLogout = () =>{
         localStorage.removeItem("name");
         localStorage.removeItem("token");
         localStorage.removeItem("dctr");
-        navigate("/login")
+        navigate("/")
     }
   return (
     <div>
@@ -23,9 +23,17 @@ const Afterdctrnav = ({name}) => {
         <div className="nav__logo">YSS<span>Dispensary</span></div>
         <ul className="nav__links">
         <li className="link"><a href="/logindoctor">All Appointment</a></li>
-        <li className="link"><a href="/Videoc">Call Doctor</a></li>
-        <CgProfile /><span>{name}</span>
+        <li className="link"><a href="/Videoc">Call Patient</a></li>
         </ul>
+       
+        <div className="profile__container">
+            {profilePhoto ? (
+              <img src={profilePhoto} alt="Profile" className="profile__photo" />
+            ) : (
+              <CgProfile className="profile__icon" />
+            )}
+            <span className="profile__name">{name}</span>
+          </div>
         <button id="btn1" onClick={handleLogout}>Logout</button>
       </nav>
       </section>
@@ -34,4 +42,4 @@ const Afterdctrnav = ({name}) => {
   )
 }
 
-export default Afterdctrnav
+export default Afterdctrnav;

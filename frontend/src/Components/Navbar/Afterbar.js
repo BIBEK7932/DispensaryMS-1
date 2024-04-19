@@ -12,7 +12,7 @@ function Afterbar({ handleLoginClick ,name}) {
       localStorage.removeItem("name");
       localStorage.removeItem("token");
       localStorage.removeItem("dctr");
-      navigate("/login")
+      navigate("/")
   }
   return (
 
@@ -28,8 +28,16 @@ function Afterbar({ handleLoginClick ,name}) {
         <ul className="nav__links">
         <li className="link"><a href="/loginuser">Book</a></li>
         <li className="link"><a href="/Videoc">Call Doctor</a></li>
-        <CgProfile /><span>{name}</span>
+        
         </ul>
+        <div className="profile__container">
+            {/* {profilePhoto ? (
+              <img src={profilePhoto} alt="Profile" className="profile__photo" />
+            ) : (
+              <CgProfile className="profile__icon" />
+            )} */}
+            <span className="profile__name">{name}</span>
+          </div>
         <button id="btn1" onClick={handleLogout}>Logout</button>
       </nav>
       </section>

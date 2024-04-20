@@ -15,6 +15,18 @@ const bookSchema = mongoose.Schema({
     phone:{
         type:Number,
         required:true
+    },
+    date:{
+        type:Date,
+        required:true
+    },
+    stime:{
+        type:String,
+        required:true
+    },
+    etime:{
+        type:String,
+        required:true
     }
 })
 

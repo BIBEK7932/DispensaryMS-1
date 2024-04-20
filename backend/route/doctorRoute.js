@@ -112,61 +112,6 @@ router.post("/book-data", async (req, res) => {
   }
 });
 
-//   try {
-//     console.log(req.body);
-//     const { fname, lname, address, phone, date, stime } = req.body;
-
-//     // Calculate the end time by adding one hour to the start time
-//     const startTime = new Date(`2000-01-01T${stime}`);
-//     const endTime = new Date(startTime.getTime() + 60 * 60 * 1000);
-//     const etime = `${endTime.getHours().toString().padStart(2, '0')}:${endTime.getMinutes().toString().padStart(2, '0')}`;
-
-//     // Check if the specified date and time slot are available
-//     const existingAppointment = await bookModel.findOne({ date, time: stime });
-
-//     // If an appointment already exists for the specified date and start time
-//     if (existingAppointment) {
-//       return res.status(201).send({
-//         message: "Slot already Booked",
-//         success: false
-//       });
-//     }
-
-//     // Check if the time lies within the hour of the start time
-//     const startHour = new Date(startTime);
-//     startHour.setHours(startHour.getHours() + 1);
-//     const endHour = new Date(startHour);
-//     endHour.setHours(endHour.getHours() + 1);
-//     const overlap = await bookModel.findOne({
-//       date: {
-//         $gte: startHour,
-//         $lt: endHour
-//       }
-//     });
-
-//     // If there is an overlapping appointment
-//     if (overlap) {
-//       return res.status(201).send({
-//         message: "Slot already Booked",
-//         success: false
-//       });
-//     }
-
-//     // If the slot is available, save the appointment data
-//     const data = new bookModel({ fname, lname, address, phone, date, stime, etime });
-//     await data.save();
-
-//     return res.status(200).send({
-//       message: "Booked successfully",
-//       success: true
-//     });
-//   } catch (error) {
-//     return res.status(501).send({
-//       message: error.message
-//     });
-//   }
-// });
-
 router.get("/book-data-get-admin", async (req, res) => {
   const data = await bookModel.find({});
   return res.status(200).send({

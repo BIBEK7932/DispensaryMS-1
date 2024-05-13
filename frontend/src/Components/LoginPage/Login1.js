@@ -96,7 +96,7 @@ function Login() {
           navigate("/logindoctor",{state:{name:name}});
           window.location.reload();
         }, 1000);
-        window.location.reload();
+        //window.location.reload();
       } 
       else if (post1.accountType1 === "user" && data.success === true) {
         toast.success("Login SuccessFull") 

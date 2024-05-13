@@ -255,7 +255,7 @@ function Homep(){
       </div>
       <div className="footer__bar">
         <div className="footer__bar__content">
-          <p>Copyright © 2023 Web Design Mastery. All rights reserved.</p>
+          <p>Copyright © 2024 YSS Dispensary. All rights reserved.</p>
           <div className="footer__socials">
             <span><i className="ri-instagram-line"></i></span>
             <span><i className="ri-facebook-fill"></i></span>

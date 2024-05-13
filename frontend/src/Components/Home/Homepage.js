@@ -14,7 +14,7 @@ import NavBar from "../Navbar/Navbar";
 
 function Homep(){
     return(
-    <div>
+    <div className="homemainp">
    <NavBar/>
     <header>
         

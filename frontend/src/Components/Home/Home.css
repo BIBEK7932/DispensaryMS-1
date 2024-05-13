@@ -58,7 +58,10 @@ a {
 body {
   font-family: "Poppins", sans-serif;
 }
-
+.homemainp{
+  width: 100%;
+  position:absolute;
+}
 header {
   background-image: linear-gradient(
       to right,
@@ -71,6 +74,7 @@ header {
   background-repeat: no-repeat;
   box-shadow: inset;
   height:fit-content;
+  width:100%;
 }
 
 .link a {
@@ -560,7 +564,7 @@ background-repeat: no-repeat;
   }
 
   .doctors__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
   }
 
@@ -571,8 +575,13 @@ background-repeat: no-repeat;
 
 @media (width < 780px) {
   .nav__links {
-    display: none;
+    display: block;
+    z-index: 6;
   }
+header{
+  width: fit-content;
+
+}
   .header__d{
     display: none;
   }

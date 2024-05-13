@@ -15,7 +15,7 @@ function NavBar({ handleLoginClick }) {
       </div> */}
         <section>
         <nav className="nav__container">
-        <div className="nav__logo">YSS<span>Dispensary</span></div>
+        <div className="nav__logo" ><a href="/">YSS<span>Dispensary</span></a></div>
         <ul className="nav__links">
           <li className="link"><a href="/">Home</a></li>
           <li className="link"><a href="/#service">Service</a></li>

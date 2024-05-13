@@ -91,7 +91,11 @@ function Login() {
       localStorage.setItem("name", name);
       localStorage.setItem("dctr",post1.accountType1)
       if (post1.accountType1 === "doctor" && data.success === true) {      
-        navigate("/logindoctor",{state:{name:name}});
+        
+        setTimeout(() => {
+          navigate("/logindoctor",{state:{name:name}});
+          window.location.reload();
+        }, 1000);
         window.location.reload();
       } else if (post1.accountType1 === "user" && data.success === true) {
         toast.success("Login SuccessFull") 

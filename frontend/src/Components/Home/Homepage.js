@@ -27,17 +27,10 @@ function Homep(){
             patient-centered approach, we're dedicated to your well-being. Trust
             us with your health and experience the difference.
           </p>
-          <button className="btn">See Services</button>
+          <button className="btn" ><a href="#service">See Services</a></button>
         </div>
-        <div className="header__form">
-          <form>
-            <h4>Book Now</h4>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
-            <input type="text" placeholder="Address" />
-            <input type="text" placeholder="Phone No." />
-            <button className="btn form__btn">Book Appointment</button>
-          </form>
+        <div className="header__d animated-bg">
+          
         </div>
       </div>
     </header>
@@ -209,6 +202,18 @@ function Homep(){
       </div>
     </section>
 
+
+<div className="map-container" id="'map'">
+        <iframe
+          width="100%"
+          height="400"
+          frameBorder="0"
+          style={{ border: "0" }}
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3488.726547647258!2d76.32397991460334!3d30.833805381608487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3904f9d8c505989b%3A0x6998cd5299b4e8fc!2sChitkara%20University%2C%20Himachal%20Pradesh!5e0!3m2!1sen!2sin!4v1676327465915!5m2!1sen!2sin"
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
     <footer className="footer">
       <div className="section__container footer__container">
         <div className="footer__col">

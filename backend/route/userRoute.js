@@ -2,7 +2,7 @@ const router = require("express").Router();
 const userModel = require("../model/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-
+const bookModel = require("../model/bbokMode");
 
 router.post("/signup", async (req, res) => {
     console.log(req.body)
@@ -71,5 +71,34 @@ router.post("/signup", async (req, res) => {
       return res.status(500).send({ message: error.message });
     }
   });
+
+  router.get("/get-data-user",async(req,res)=>{
+    try {
+      const data = await bookModel.findById(req.query.id);
+      return res.status(201).send({
+        message:"Fetch done",
+        success:true,
+        data:data
+      })
+    } catch (error) {
+      return res.status(500).send({ message: error.message });
+    }
+  })
+  router.post("/save-medicine",async(req,res)=>{
+    try {
+      console.log(req.body)
+      const data = await bookModel.findById(req.query.id)
+      data.medicine.push(req.body); 
+      await data.save();
+      return res.status(201).send({
+        message:"Fetch done",
+        success:true,
+        data:data
+      })
+    } catch (error) {
+      return res.status(500).send({ message: error.message });
+    }
+  })
+
 
   module.exports = router

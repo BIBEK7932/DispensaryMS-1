@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+
+import React, { useState, useEffect } from 'react';
 import Afterbar from '../Navbar/Afterbar'
 import axios from 'axios'
 import { toast,ToastContainer } from 'react-toastify'
@@ -7,17 +8,26 @@ import about from './assets/about.jpg';
 import doc1 from './assets/doctor-1.jpg';
 import doc2 from './assets/doctor-2.jpg';
 import doc3 from './assets/doctor-3.jpg';
-import header from './assets/header.jpg';
 import choose from './assets/choose-us.jpg';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import Select from 'react-select';
+import 'react-toastify/dist/ReactToastify.css';
+import './doc.css'
 const Afterloginuser = () => {
+
   const location = useLocation()
   const name = location.state && location.state.name
-    const [post,setPost] = useState({
-        fname:"",
-        lname:"",
-        address:"",
-        phone:""
-    })
+  const [post, setPost] = useState({
+    fname: "",
+    email: "",
+    address: "",
+    phone: "",
+    date: "",
+    stime: "",
+    etime: "",
+    mode: "",
+  });
     const submitForm = async(event) =>{
         event.preventDefault()
         try {
@@ -28,20 +38,23 @@ const Afterloginuser = () => {
             }
             console.log(post)
             const res = await axios.post("http://localhost:5050/doctor/book-data",post,config);
-            if(res.data.success)
-            {
-                toast.success("Submitted succesfuuly")
+            if (res.status === 200) {
+              toast.success(res.data.message);
+            } else {
+              toast.error(res.data.message);
             }
-        } catch (error) {
-            console.log("Error from the book from" + error)
-        }
-    }
+          } catch (error) {
+            console.log("Error from the book from" + error);
+          }
+        };
     const handleInput = (event) =>{
         setPost({...post,[event.target.name]:event.target.value})
     }
   return (
+    <>
+    <ToastContainer/>
     <div>
-        <ToastContainer/>
+        
         <Afterbar name={name}/>
         <header>
         
@@ -58,11 +71,57 @@ const Afterloginuser = () => {
           </div>
           <div className="header__form">
             <form onSubmit={submitForm}>
-              <h4>Book Now</h4>
-              <input type="text" placeholder="First Name"  name='fname' onChange={handleInput}/>
-              <input type="text" placeholder="Last Name" name='lname' onChange={handleInput}/>
-              <input type="text" placeholder="Address" name='address' onChange={handleInput}/>
-              <input type="text" placeholder="Phone No." name='phone' onChange={handleInput}/>
+           
+         <h4>Book Now</h4>
+              <input
+                type="text"
+                placeholder="First Name"
+                name="fname"
+                onChange={handleInput}
+              />
+              <input
+                type="email"
+                placeholder="Enter email"
+                name="email"
+                onChange={handleInput}
+              />
+              <input
+                type="text"
+                placeholder="Address"
+                name="address"
+                onChange={handleInput}
+              />
+              <input
+                type="text"
+                placeholder="Phone No."
+                name="phone"
+                onChange={handleInput}
+              />
+              <input
+                type="date"
+                placeholder="Date"
+                name="date"
+                onChange={handleInput}
+              />
+              start time
+              <input
+                type="time"
+                placeholder="Time"
+                name="stime"
+                onChange={handleInput}
+              />
+              End time
+              <input
+                type="time"
+                placeholder="Time"
+                name="etime"
+                onChange={handleInput}
+              />
+              <select name="mode" onChange={handleInput}>
+                <option value="">Select Mode</option>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+              </select>
               <button className="btn form__btn" type='submit'>Book Appointment</button>
             </form>
           </div>
@@ -287,6 +346,7 @@ const Afterloginuser = () => {
     </footer>
       
     </div>
+    </>
   )
 }
 

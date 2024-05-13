@@ -16,10 +16,10 @@ const doctors = mongoose.Schema({
     type:String,
     required:true
    },
-   profilePhoto: {
-    type: String, // Assuming the profile photo is stored as a URL
-    required: false // Assuming the profile photo is optional
-}
+   isDoctor:{
+    type:Boolean,
+    default:false
+   }
 })
 
 

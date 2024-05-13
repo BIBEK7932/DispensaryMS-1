@@ -36,7 +36,7 @@ function Afterbar({ handleLoginClick ,name}) {
             ) : (
               <CgProfile className="profile__icon" />
             )} */}
-            <span className="profile__name">{name}</span>
+            <span className="profile__name"><b>{name}</b></span>
           </div>
         <button id="btn1" onClick={handleLogout}>Logout</button>
       </nav>

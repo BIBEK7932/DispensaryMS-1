@@ -51,13 +51,15 @@ function Login() {
         post,
         config
       );
+      // alert("hello")
+      console.log(data);
       toast.success("Signup complete", {
         position: "top-center",
       });
       setTimeout(() => {
         window.location.reload();
         navigate("/")
-      }, 1000);
+      }, 500);
     } catch (error) {
       toast.error("Signup failed", {
         position: "top-center",
@@ -84,7 +86,6 @@ function Login() {
       console.log(response);
       const { data } = response;
       const name = data.name;
-      console.log(name);
       const token = data.token;
       localStorage.setItem("token",token)
       localStorage.setItem("name", name);
@@ -93,11 +94,22 @@ function Login() {
         navigate("/logindoctor",{state:{name:name}});
         window.location.reload();
       } else if (post1.accountType1 === "user" && data.success === true) {
-        navigate("/loginuser",{state:{name:name}});
-        window.location.reload();      
+        toast.success("Login successfully") 
+        setTimeout(() => {
+          navigate("/loginuser",{state:{name:name}});
+          window.location.reload();
+        }, 300);
+            
+         
+        // window.location.reload();      
       }
+else if (post1.accountType1 === "admin" && data.success === true ) {
+  navigate("/loginadmin",{state:{name:name}});
+  window.location.reload();      
+}
     } catch (error) {
-      console.log("Error" + error);
+      console.log(error)
+      toast.error("Enter Valid Details");
     }
   };
 
@@ -119,12 +131,13 @@ function Login() {
   }, []);
 
   return (
-    <div className="l1">
+    <>
     <NavBar/>
+    <ToastContainer />
    
     <div id="mainlogin">
    
-      <ToastContainer />
+      
       <div className="container" id="container">
         <div className="form-container sign-up-container">
           <form action="#" onSubmit={submitHandle}>
@@ -135,9 +148,11 @@ function Login() {
               onChange={handleAccountTypeChange}
             >
               <option value="doctor">Doctor</option>
-              {/* <option>Receptionist</option> */}
+             
               <option value="user">Patient</option>
-              {/* <option>Admin</option> */}
+              {/* <option>Admin</option>  */}
+
+
             </select>
             <input
               type="text"
@@ -182,7 +197,9 @@ function Login() {
               onChange={handleAccountTypeChange1}
             >
               <option value="doctor">Doctor</option>
-              <option value="user">Patient</option>
+              <option value="user">Patient</option> 
+               <option value="admin">Admin</option>
+
             </select>
             <input
               type="email"
@@ -196,7 +213,7 @@ function Login() {
               name="password"
               onChange={handleInput1}
             />
-            <a href="#">Forgot your password?</a>
+            {/* <a href="#">Forgot your password?</a> */}
             <button type="submit">LogIn</button>
           </form>
         </div>
@@ -227,8 +244,9 @@ function Login() {
         </div>
       </div>
     </div>
-    </div>
+    </>
   );
 }
 
 export default Login;
+

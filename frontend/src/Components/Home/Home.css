@@ -42,7 +42,10 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
+.btn a{
+  font-size: large;
+  color: #e9f7f7;
+}
 img {
   width: 100%;
   display: flex;
@@ -67,11 +70,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset;
-  height:900px;
- 
+  height:820px;
 }
-
-
 
 .link a {
   padding: 0.5rem;
@@ -105,44 +105,98 @@ header {
   color: var(--primary-color-light);
 }
 
+.header__d {
+  width: 100%;
+  max-width: 350px;
+ 
+height: 450px;
+  background-image: linear-gradient(
+    to right,
+    rgba(165, 222, 245, .8),
+    rgba(241, 246, 242, .6)
+  ),
+  url("./appoin.png");
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 10px;
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+padding: 2rem;
+transition: transform 0.01s ease;
+
+}
 .header__form {
   width: 100%;
   max-width: 350px;
+ 
+
+ 
+
+}
+.header__d:hover {
+  transform: translateY(-5px); /* Move the element up on hover */
+}
+
+.header__d:active {
+  transform: translateY(5px); /* Reset position on click */
+}
+
+
+@keyframes slideBackground {
+  from {
+    background-position: top center;
+    transform: translateY(0); 
+  }
+  to {
+    background-position: bottom center;
+    transform: translateY(-10px); 
+  }
+}
+
+
+
+.header__d.animated-bg {
+  animation: slideBackground 0.7s linear infinite alternate;
 }
 
 .header__form form {
+  background-image: linear-gradient(
+    to right,
+    rgba(165, 222, 245, .8),
+    rgba(241, 246, 242, .6)
+  ),
+  url("./appoin.png");
+background-position: center center;
+background-size: cover;
+background-repeat: no-repeat;
+border-radius: 10px;
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+padding: 2rem;
+transition: transform 0.1s ease;
   display: grid;
   gap: 1rem;
   padding: 2rem;
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-    to right,
-    rgba(165, 222, 245, 0.8),
-    rgba(241, 246, 242, 0.6)
-  ),
-  url("./appoin.png");
-background-position: center center;
-background-size: cover;
-background-repeat: no-repeat;
+
 }
 
 .header__form input {
-  padding: 1rem;
+  padding: .5rem;
+
   outline: none;
   border: none;
   font-size: 1rem;
   color: var(--primary-color);
   background-color: var(--primary-color-light);
   border-radius: 5px;
-  background-image: linear-gradient(
+  background: linear-gradient(
     to right,
     rgba(241, 246, 242, 0.6),
     rgba(165, 222, 245, 0.8)
    
-  ),
-  url("");
+  );
 background-position: center center;
 background-size: cover;
 background-repeat: no-repeat;

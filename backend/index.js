@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const db="mongodb+srv://bibekdas7932:Bibek%402204@cluster0.ti6kvng.mongodb.net/DispensaryManagementSystem?retryWrites=true&w=majority&appName=Cluster0"
 const app=express();
+
 app.use(cors())
 app.use(express.json())
 mongoose.connect(db,{})
@@ -25,8 +26,11 @@ const doctorsScema = require('./model/dctrModel.js')
 // })
 const userRoute = require("./route/userRoute.js")
 const doctorRoute = require("./route/doctorRoute.js")
+const adminRoute = require("./route/adminRoute.js")
+
 app.use("/user",userRoute)
 app.use("/doctor",doctorRoute)
+app.use("/admin",adminRoute)
 
 app.listen(5050,()=>{
     console.log("Server Started");

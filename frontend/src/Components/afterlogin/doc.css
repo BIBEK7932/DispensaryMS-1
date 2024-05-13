@@ -1,4 +1,3 @@
-/* Style for the outer div */
 
 #appoinmentList {
     padding: 20px;
@@ -10,7 +9,7 @@
     width: 100%;
   }
   
-  /* Style for the table */
+ 
   #appoinmentListT {
     width: 100%;
     border-collapse: collapse;
@@ -20,7 +19,7 @@
     margin-top: 6fr;
   }
   
-  /* Style for table header */
+
   .appoinmentListTH th {
     background-color: #007bff;
     color: #ffffff;
@@ -29,24 +28,24 @@
     border-bottom: 2px solid #ffffff;
   }
   
-  /* Style for table rows */
-  .appoinmentListTH tr {
+ .appoinmentListTH tr {
     transition: background-color 0.3s ease;
   }
   
-  /* Alternate row background color */
+
   .appoinmentListTH tr:nth-child(even) {
     background-color: #f2f2f2;
   }
   
-  /* Style for table cells */
+
   .appoinmentListTH td {
     padding: 12px;
     border-bottom: 1px solid #e9ecef;
   }
   
-  /* Hover effect on rows */
+
   .appoinmentListTH tr:hover {
     background-color: #bbd8f4;
   }
   
+ 

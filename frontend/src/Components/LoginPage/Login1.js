@@ -47,7 +47,7 @@ function Login() {
       console.log(post);
       console.log(post.accountType);
       const { data } = await axios.post(
-        `http://localhost:5050/${post.accountType}/signup`,
+        `https://dispensaryms-1.onrender.com/${post.accountType}/signup`,
         post,
         config
       );
@@ -79,7 +79,7 @@ function Login() {
       console.log(post1);
       console.log(post1.accountType1);
       const response = await axios.post(
-        `http://localhost:5050/${post1.accountType1}/login`,
+        `https://dispensaryms-1.onrender.com/${post1.accountType1}/login`,
         post1,
         config
       );

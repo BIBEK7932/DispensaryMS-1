@@ -72,7 +72,7 @@ const Afterloginadmin = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get("http://localhost:5050/admin/get-doctor");
+      const res = await axios.get("https://dispensaryms-1.onrender.com/admin/get-doctor");
       setData(res.data.data);
       console.log(res.data.data);
     } catch (error) {
@@ -87,7 +87,7 @@ const Afterloginadmin = () => {
   const makeDoctor = async (id) => {
     try {
       const res = await axios.put(
-        `http://localhost:5050/admin/make-doctor/?id=${id}`
+        `https://dispensaryms-1.onrender.com/admin/make-doctor/?id=${id}`
       );
       if (res.data.success) {
         toast.success("Updated successfully");

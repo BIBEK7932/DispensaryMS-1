@@ -13,7 +13,7 @@ const Afterloginadoctor = () => {
 const [data,setData] = useState([])
     const fetchData = async() =>{
         try {
-            const res = await axios.get("http://localhost:5050/doctor/book-data-get-admin")
+            const res = await axios.get("https://dispensaryms-1.onrender.com/doctor/book-data-get-admin")
             console.log(res.data)
             console.log(res.data.data)
             setData(res.data.data)
@@ -24,7 +24,7 @@ const [data,setData] = useState([])
     const handleDelete = async(id) =>{
       try {
         console.log(id)
-        const res = await axios.delete(`http://localhost:5050/doctor/delete/?id=${id}`)
+        const res = await axios.delete(`https://dispensaryms-1.onrender.com/doctor/delete/?id=${id}`)
         console.log(res.data)
         if(res.data.success)
         {

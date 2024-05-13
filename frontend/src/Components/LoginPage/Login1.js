@@ -94,7 +94,7 @@ function Login() {
         navigate("/logindoctor",{state:{name:name}});
         window.location.reload();
       } else if (post1.accountType1 === "user" && data.success === true) {
-        toast.success("Login successfully") 
+        toast.success("Login SuccessFull") 
         setTimeout(() => {
           navigate("/loginuser",{state:{name:name}});
           window.location.reload();

@@ -70,7 +70,7 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset;
-  height:820px;
+  height:fit-content;
 }
 
 .link a {

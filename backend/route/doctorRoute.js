@@ -163,6 +163,8 @@ router.post("/login", async (req, res) => {
       success: true,
       email: user.email,
       isDoctor: user.isDoctor,
+      isAdmin: user.isAdmin,
+
     });
   } catch (error) {
     return res.status(500).send({ message: error.message });
@@ -231,3 +233,4 @@ router.delete("/delete", async (req, res) => {
   }
 });
 module.exports = router;
+

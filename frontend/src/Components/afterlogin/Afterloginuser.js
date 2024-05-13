@@ -36,7 +36,6 @@ const Afterloginuser = () => {
                     "Content-Type":"application/json"
                 }
             }
-            console.log(post)
             const res = await axios.post("http://localhost:5050/doctor/book-data",post,config);
             if (res.status === 200) {
               toast.success(res.data.message);
@@ -122,6 +121,17 @@ const Afterloginuser = () => {
                 <option value="online">Online</option>
                 <option value="offline">Offline</option>
               </select>
+=======
+              <h4>Book Now</h4>
+              <input type="text" placeholder="First Name"  name='fname' onChange={handleInput}/>
+              <input type="text" placeholder="Last Name" name='lname' onChange={handleInput}/>
+              <input type="text" placeholder="Address" name='address' onChange={handleInput}/>
+              <input type="text" placeholder="Phone No." name='phone' onChange={handleInput}/>
+              <input type="date" placeholder="Date" name='date' onChange={handleInput} /> 
+              start time
+              <input type="time" placeholder="Time" name='stime' onChange={handleInput} />
+              End time
+              <input type="time" placeholder="Time" name='etime' onChange={handleInput} />
               <button className="btn form__btn" type='submit'>Book Appointment</button>
             </form>
           </div>

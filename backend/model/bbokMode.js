@@ -33,7 +33,8 @@ const bookSchema = mongoose.Schema({
         required:true
     },
     medicine:[]
-})
+    })
+
 
 const bookModel = mongoose.model("book",bookSchema);
 module.exports = bookModel

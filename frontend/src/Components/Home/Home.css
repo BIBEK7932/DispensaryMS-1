@@ -60,7 +60,7 @@ body {
 }
 .homemainp{
   width: 100%;
-  position:absolute;
+  overflow-x: hidden;
 }
 header {
   background-image: linear-gradient(
@@ -464,6 +464,7 @@ background-repeat: no-repeat;
 
 .footer {
   background-color: var(--primary-color-light);
+  width: 100%;
 }
 
 .footer__container {
@@ -612,6 +613,12 @@ header{
 
   .doctors__grid {
     grid-template-columns: repeat(1, 1fr);
+
+  }
+  .footer__container {
+  
+    grid-template-columns: repeat(1, 1fr);
+  
   }
 
   .footer__bar__content {

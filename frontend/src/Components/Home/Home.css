@@ -573,6 +573,9 @@ background-repeat: no-repeat;
   .nav__links {
     display: none;
   }
+  .header__d{
+    display: none;
+  }
 
   .header__container {
     flex-direction: column;

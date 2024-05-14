@@ -47,6 +47,7 @@ router.post("/login", async (req, res) => {
       user.password
     );
     const isDoctor1 = await dctrModel.findOne({isDoctor: req.body.isDoctor});
+    console.log(`Ankita ${isDoctor1}`);
 
     if (!validPassword && !isDoctor1) {
       return res.status(500).send({ message: "Error" });

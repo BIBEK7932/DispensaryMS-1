@@ -58,10 +58,10 @@ a {
 body {
   font-family: "Poppins", sans-serif;
 }
-/* .homemainp{
+.homemainp{
   width: 100%;
-  /* overflow-x: hidden; 
-} */
+ 
+}
 header {
   background-image: linear-gradient(
       to right,

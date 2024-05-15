@@ -61,11 +61,11 @@ const Alluserdetails = () => {
                 <div>
             <td>{data.fname}</td> 
             <td>{data.email}</td>
-            <td>{data.address}</td>
+            {/* <td>{data.address}</td> */}
             <td>{data.phone}</td>
-            <td>{data.date}</td>
+            {/* <td>{data.date}</td>
             <td>{data.stime}</td>
-            <td>{data.etime}</td>
+            <td>{data.etime}</td> */}
             <td>{data.mode}</td>        </div>
           <textarea
             className="textarea4"

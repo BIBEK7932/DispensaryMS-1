@@ -590,6 +590,36 @@ header{
   .header__container {
     flex-direction: column;
   }
+  .service__header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .service__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .footer__container {
+  
+    grid-template-columns: repeat(1, 1fr);
+  
+  }
+
+  .footer__bar__content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .why__grid {
+    column-gap: 1rem;
+  }
+
+  .doctors__header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctors__grid {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
 }
 
 @media (width < 600px) {

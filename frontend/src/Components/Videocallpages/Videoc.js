@@ -20,7 +20,7 @@ const [dctr,setDctr] = useState("")
     setName(name)
   },[])
   return (
-    <>
+    <div className="mainVideocall1">
     {dctr==="doctor" ? <Afterdctrnav name={name}/> : <Afterbar name={name}/>}
       
       <div className="vid_call">
@@ -39,7 +39,7 @@ const [dctr,setDctr] = useState("")
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

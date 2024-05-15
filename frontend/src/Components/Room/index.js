@@ -7,21 +7,21 @@ const RoomPage = ()=>{
 const { RoomId } = useParams();
 console.log(RoomId);
 const  myMetting = async (element) =>{
-    const appID = 12065913;
-    const serverSecret = "8c1c679698b81b65dcd3e184468b3060";
+    const appID = 589560659;
+    const serverSecret = "3ab9152a3bcd885858f290421619077f";
 
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, 
         serverSecret,
          RoomId,
           Date.now().toString(),
-           "Bibek ");
+           "Enter Your Name ");
     const zc = ZegoUIKitPrebuilt.create(kitToken);
 
     zc.joinRoom({
         container: element,
         sharedLinks: [{
             name: 'Personal link',
-            url: `http://localhost:3000/Videoc/Room/${RoomId}`
+            url: `https://dispensaryms-1-1.onrender.com/Videoc/Room/${RoomId}`
              
           },
         ],

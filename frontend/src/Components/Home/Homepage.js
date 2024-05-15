@@ -166,8 +166,7 @@ function Homep(){
             <div class="doctors__socials">
             <span><i className="ri-instagram-line"></i></span>
               <span><i className="ri-facebook-fill"></i></span>
-              {/* <span><i className="ri-heart-fill"></i></span>
-              <span><i className="ri-twitter-fill"></i></span> */}
+      
             </div>
           </div>
           <h4>Dr. Emily Smith</h4>

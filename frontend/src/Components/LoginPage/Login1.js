@@ -103,7 +103,7 @@ function Login() {
         setTimeout(() => {
           navigate("/loginuser",{state:{name:name}});
           window.location.reload();
-        }, 300);
+        }, 600);
             
          
         // window.location.reload();      

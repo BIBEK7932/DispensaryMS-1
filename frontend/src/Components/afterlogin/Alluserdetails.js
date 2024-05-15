@@ -60,9 +60,12 @@ const Alluserdetails = () => {
         <form action="#" onSubmit={submitHandle}>
                 <div>
             <td>{data.fname}</td> 
+            <br/>
             <td>{data.email}</td>
+            <br/>
             {/* <td>{data.address}</td> */}
             <td>{data.phone}</td>
+            <br/>
             {/* <td>{data.date}</td>
             <td>{data.stime}</td>
             <td>{data.etime}</td> */}

@@ -88,6 +88,8 @@ const Afterloginadmin = () => {
     try {
       const res = await axios.put(
         `https://dispensaryms-1-1.onrender.com/admin/make-doctor/?id=${id}`
+        
+
       );
       if (res.data.success) {
         toast.success("Updated successfully");

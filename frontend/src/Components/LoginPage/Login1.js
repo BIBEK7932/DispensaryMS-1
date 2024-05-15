@@ -83,37 +83,40 @@ function Login() {
         post1,
         config
       );
-      console.log(response);
+      console.log(response.data);
       const { data } = response;
       const name = data.name;
       const token = data.token;
-      localStorage.setItem("token",token)
+      localStorage.setItem("token", token)
       localStorage.setItem("name", name);
-      localStorage.setItem("dctr",post1.accountType1)
-      if (post1.accountType1 === "doctor" && data.success === true) {      
-        toast.success("Login SuccessFull") 
+      localStorage.setItem("dctr", post1.accountType1)
+      if (post1.accountType1 === "doctor" && data.success === true && post1 && data.isDoctor) {
+        toast.success("Login SuccessFull")
         setTimeout(() => {
-          navigate("/logindoctor",{state:{name:name}});
+          navigate("/logindoctor", { state: { name: name } });
           window.location.reload();
         }, 300);
-       // window.location.reload();
-      } 
+        // window.location.reload();
+      }
       else if (post1.accountType1 === "user" && data.success === true) {
-        toast.success("Login SuccessFull") 
-         setTimeout(() => {
-          
-        navigate("/loginuser",{state:{name:name}});
-        window.location.reload();
+        toast.success("Login SuccessFull")
+        setTimeout(() => {
+
+          navigate("/loginuser", { state: { name: name } });
+          window.location.reload();
         }, 600);
-       
-            
-         
+
+
+
         // window.location.reload();      
       }
-else if (post1.accountType1 === "admin" && data.success === true ) {
-  navigate("/loginadmin",{state:{name:name}});
-  window.location.reload();      
-}
+      else if (post1.accountType1 === "admin" && data.success === true) {
+        navigate("/loginadmin", { state: { name: name } });
+        window.location.reload();
+      }
+      else {
+        toast.error("Login failed")
+      }
     } catch (error) {
       console.log(error)
       toast.error("Enter Valid Details");
@@ -139,118 +142,118 @@ else if (post1.accountType1 === "admin" && data.success === true ) {
 
   return (
     <>
-    <NavBar/>
-    <ToastContainer />
-   
-    <div id="mainlogin">
-   
-      
-      <div className="container" id="container">
-        <div className="form-container sign-up-container">
-          <form action="#" onSubmit={submitHandle}>
-            <h1>Create Account</h1>
-            <select
-              className="custom-select"
-              value={post.accountType}
-              onChange={handleAccountTypeChange}
-            >
-              <option value="doctor">Doctor</option>
-             
-              <option value="user">Patient</option>
-              {/* <option>Admin</option>  */}
+      <NavBar />
+      <ToastContainer />
+
+      <div id="mainlogin">
 
 
-            </select>
-            <input
-              type="text"
-              placeholder="Name"
-              onChange={handleInput}
-              name="name"
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              onChange={handleInput}
-              name="email"
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={handleInput}
-              name="password"
-            />
-            <input
-              type="text"
-              placeholder="About you"
-              onChange={handleInput}
-              name="about"
-            />
-            <input
-              type="file"
-              placeholder="Upload Photo"
-              onChange={handleInput}
-              name="profilePhoto"
-            />
-            <button type="submit">Sign In</button>
-          </form>
-        </div>
+        <div className="container" id="container">
+          <div className="form-container sign-up-container">
+            <form action="#" onSubmit={submitHandle}>
+              <h1>Create Account</h1>
+              <select
+                className="custom-select"
+                value={post.accountType}
+                onChange={handleAccountTypeChange}
+              >
+                <option value="doctor">Doctor</option>
 
-        <div className="form-container sign-in-container">
-          <form action="#" onSubmit={submitForm}>
-            <h1>Sign in</h1>
-            <select
-              className="custom-select"
-              value={post1.accountType1}
-              onChange={handleAccountTypeChange1}
-            >
-              <option value="doctor">Doctor</option>
-              <option value="user">Patient</option> 
-               <option value="admin">Admin</option>
+                <option value="user">Patient</option>
+                {/* <option>Admin</option>  */}
 
-            </select>
-            <input
-              type="email"
-              placeholder="Email"
-              name="email"
-              onChange={handleInput1}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={handleInput1}
-            />
-            {/* <a href="#">Forgot your password?</a> */}
-            <button type="submit">LogIn</button>
-          </form>
-        </div>
 
-        <div className="overlay-container">
-          <div className="overlay">
-            <div className="overlay-panel overlay-left">
-              <h1>Welcome Back!</h1>
-              <p>
-                To keep connected with us please login with your personal info
-              </p>
-              <button className="ghost" id="signIn">
-                Log In
-              </button>
-            </div>
+              </select>
+              <input
+                type="text"
+                placeholder="Name"
+                onChange={handleInput}
+                name="name"
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                onChange={handleInput}
+                name="email"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={handleInput}
+                name="password"
+              />
+              <input
+                type="text"
+                placeholder="About you"
+                onChange={handleInput}
+                name="about"
+              />
+              <input
+                type="file"
+                placeholder="Upload Photo"
+                onChange={handleInput}
+                name="profilePhoto"
+              />
+              <button type="submit">Sign In</button>
+            </form>
+          </div>
 
-            <div className="overlay-panel overlay-right">
-              <h1>Hello!</h1>
-              <h3>Don't have any account ?</h3>
-              <p>
-                Click below for <b>Sign up</b>
-              </p>
-              <button className="ghost" id="signUp">
-                Sign In
-              </button>
+          <div className="form-container sign-in-container">
+            <form action="#" onSubmit={submitForm}>
+              <h1>Sign in</h1>
+              <select
+                className="custom-select"
+                value={post1.accountType1}
+                onChange={handleAccountTypeChange1}
+              >
+                <option value="doctor">Doctor</option>
+                <option value="user">Patient</option>
+                <option value="admin">Admin</option>
+
+              </select>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                onChange={handleInput1}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleInput1}
+              />
+              {/* <a href="#">Forgot your password?</a> */}
+              <button type="submit">LogIn</button>
+            </form>
+          </div>
+
+          <div className="overlay-container">
+            <div className="overlay">
+              <div className="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>
+                  To keep connected with us please login with your personal info
+                </p>
+                <button className="ghost" id="signIn">
+                  Log In
+                </button>
+              </div>
+
+              <div className="overlay-panel overlay-right">
+                <h1>Hello!</h1>
+                <h3>Don't have any account ?</h3>
+                <p>
+                  Click below for <b>Sign up</b>
+                </p>
+                <button className="ghost" id="signUp">
+                  Sign In
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </>
   );
 }

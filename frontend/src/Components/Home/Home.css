@@ -464,7 +464,7 @@ background-repeat: no-repeat;
 
 .footer {
   background-color: var(--primary-color-light);
-  width: 100%;
+  /* width: 100%; */
 }
 
 .footer__container {

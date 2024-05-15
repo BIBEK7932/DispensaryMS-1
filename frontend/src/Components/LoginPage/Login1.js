@@ -91,15 +91,16 @@ function Login() {
       localStorage.setItem("name", name);
       localStorage.setItem("dctr", post1.accountType1)
       if (post1.accountType1 === "doctor" && data.success === true && post1 && data.isDoctor) {
-        toast.success("Login SuccessFull")
+        toast.success(data.message)
+        
         setTimeout(() => {
           navigate("/logindoctor", { state: { name: name } });
-          window.location.reload();
-        }, 300);
+          //window.location.reload();
+        }, 800);
         // window.location.reload();
       }
       else if (post1.accountType1 === "user" && data.success === true) {
-        toast.success("Login SuccessFull")
+        toast.success(data.message)
         setTimeout(() => {
 
           navigate("/loginuser", { state: { name: name } });
@@ -111,6 +112,7 @@ function Login() {
         // window.location.reload();      
       }
       else if (post1.accountType1 === "admin" && data.success === true) {
+        toast.success(data.message)
         navigate("/loginadmin", { state: { name: name } });
         window.location.reload();
       }
@@ -157,9 +159,10 @@ function Login() {
                 value={post.accountType}
                 onChange={handleAccountTypeChange}
               >
+                <option value="user">Patient</option>
                 <option value="doctor">Doctor</option>
 
-                <option value="user">Patient</option>
+                
                 {/* <option>Admin</option>  */}
 
 
@@ -205,9 +208,9 @@ function Login() {
                 className="custom-select"
                 value={post1.accountType1}
                 onChange={handleAccountTypeChange1}
-              >
+              > <option value="user">Patient</option>
                 <option value="doctor">Doctor</option>
-                <option value="user">Patient</option>
+               
                 <option value="admin">Admin</option>
 
               </select>

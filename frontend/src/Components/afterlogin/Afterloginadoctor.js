@@ -7,6 +7,8 @@ import { toast,ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import './doc.css'
 const Afterloginadoctor = () => {
+  const today = new Date()
+  console.log(today)
   const navigate = useNavigate()
     const location = useLocation();
     const name = location.state && location.state.name
@@ -67,13 +69,16 @@ const [data,setData] = useState([])
     <tbody className='appoinmentListTH'>
       {
         data.map((val, ind) => {
+          const appDate = new Date(val.date)
+          
+          if(appDate >= today){
           return (
             <tr key={ind}>
               <td>{val.fname}</td>
               <td>{val.email}</td>
               <td>{val.address}</td>
               <td>{val.phone}</td>
-              <td>{val.date}</td>
+              <td>{new Date(val.date).toLocaleDateString()}</td>
               <td>{val.stime}</td>
               <td>{val.etime}</td>
               <td>{val.mode}</td>
@@ -82,6 +87,7 @@ const [data,setData] = useState([])
               
             </tr>
           )
+        }
         })
       }
     </tbody>

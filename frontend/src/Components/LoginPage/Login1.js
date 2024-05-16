@@ -38,6 +38,7 @@ function Login() {
 
   const submitHandle = async (event) => {
     event.preventDefault();
+    const { data1 } = response;
     try {
       const config = {
         headers: {
@@ -53,6 +54,7 @@ function Login() {
       );
       // alert("hello")
       console.log(data);
+     
       toast.success("Signup complete", {
         position: "top-center",
       });
@@ -61,7 +63,7 @@ function Login() {
         navigate("/")
       }, 500);
     } catch (error) {
-      toast.error("Signup failed", {
+      toast.error(data1.message, {
         position: "top-center",
       });
       console.log("Error from signup page" + error);

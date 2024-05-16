@@ -159,7 +159,7 @@ function Login() {
                 value={post.accountType}
                 onChange={handleAccountTypeChange}
               >
-                <option value="user">Patient</option>
+                <option value="user" >Patient</option>
                 <option value="doctor">Doctor</option>
 
                 
@@ -203,7 +203,7 @@ function Login() {
 
           <div className="form-container sign-in-container">
             <form action="#" onSubmit={submitForm}>
-              <h1>Sign in</h1>
+              <h1>Login</h1>
               <select
                 className="custom-select"
                 value={post1.accountType1}

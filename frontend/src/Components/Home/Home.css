@@ -576,8 +576,8 @@ background-repeat: no-repeat;
 
 @media (width < 780px) {
   .nav__links {
-    display: block;
-    z-index: 6;
+    display: none;
+    
   }
 header{
   width: fit-content;

@@ -22,7 +22,7 @@ function NavBar({ handleLoginClick }) {
           <li className="link"><a href="/#about">About Us</a></li>
           <li className="link"><a href="/Doctors">Doctors</a></li>
         </ul>
-        <div className="navicon"> <i className="ri-menu-fill"></i></div>
+        {/* <div className="navicon"> <i className="ri-menu-fill"></i></div> */}
        
         <button id="btn1" onClick={()=>navigate("/login")}>Login</button>
       </nav>

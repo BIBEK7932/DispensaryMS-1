@@ -97,7 +97,7 @@ function Login() {
         
         setTimeout(() => {
           navigate("/logindoctor", { state: { name: name } });
-          //window.location.reload();
+          window.location.reload();
         }, 800);
         // window.location.reload();
       }

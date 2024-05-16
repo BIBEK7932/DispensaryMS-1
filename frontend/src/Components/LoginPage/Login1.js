@@ -208,7 +208,7 @@ function Login() {
                 className="custom-select"
                 value={post1.accountType1}
                 onChange={handleAccountTypeChange1}
-              > <option value="user">Patient</option>
+              > <option value="user" >Patient</option>
                 <option value="doctor">Doctor</option>
                
                 <option value="admin">Admin</option>
